@@ -1,6 +1,6 @@
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { subthemes } from "@/data/subthemes";
 
 export default function CallForPapersPage() {

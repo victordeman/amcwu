@@ -1,5 +1,5 @@
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { Card } from "@/components/ui/card";
 import { speakers } from "@/data/speakers";
 
 export default function SpeakersPage() {

@@ -1,23 +1,39 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cinzel = Cinzel({
+  variable: "--font-display",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "AMCWU 2026 - Academic Conference",
-  description: "Official Website for AMCWU 2026 Conference",
+  title: "AMCWU 2026 | Wigwe University Annual Multidisciplinary Conference",
+  description:
+    "Official Website for AMCWU 2026 - Annual Multidisciplinary Conference on World Universities hosted by Wigwe University.",
+  openGraph: {
+    title: "AMCWU 2026 | Wigwe University Annual Multidisciplinary Conference",
+    description:
+      "Advancing Global Higher Education through Interdisciplinary Innovation. Join us at Wigwe University in 2026.",
+    url: "https://amcwu2026.wigweuniversity.edu.ng",
+    siteName: "AMCWU 2026",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AMCWU 2026 | Wigwe University",
+    description:
+      "Annual Multidisciplinary Conference on World Universities at Wigwe University.",
+  },
 };
 
 export default function RootLayout({
@@ -29,17 +45,25 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${cinzel.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-background focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
+        >
+          Skip to content
+        </a>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          enableSystem={false}
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

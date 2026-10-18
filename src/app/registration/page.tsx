@@ -1,5 +1,5 @@
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/Table";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { registrationFees } from "@/data/fees";
 
 export default function RegistrationPage() {
