@@ -130,7 +130,7 @@ export default function Home() {
               </p>
             </div>
             <Link
-              href="/about"
+              href="/about#hybrid-access"
               className="text-xs font-semibold text-accent hover:underline inline-flex items-center gap-1 mt-2"
             >
               Learn About Hybrid Access <ArrowRight className="h-3.5 w-3.5" />

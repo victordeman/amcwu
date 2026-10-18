@@ -23,7 +23,7 @@ export const importantDates: ImportantDate[] = [
     id: "notification-of-acceptance",
     event: "Notification of Acceptance",
     date: "15th September 2026",
-    description: "Notification issued to authors regarding abstract acceptance.",
+    description: "Notifications issued to authors regarding abstract acceptance.",
   },
   {
     id: "early-bird-deadline",
@@ -38,6 +38,12 @@ export const importantDates: ImportantDate[] = [
     description: "Final deadline for all conference participant registrations.",
   },
   {
+    id: "conference-dates",
+    event: "1st African Multidisciplinary Conference (AMCWU 2026)",
+    date: "18th–19th November 2026",
+    description: "Main conference event days held at Wigwe University, Isiokpo & Virtual.",
+  },
+  {
     id: "post-conference-proceedings",
     event: "Post-Conference Proceedings Submission",
     date: "15th December 2026",
@@ -47,6 +53,6 @@ export const importantDates: ImportantDate[] = [
     id: "proceedings-publication",
     event: "Proceedings Publication",
     date: "31st January 2027",
-    description: "Publication date of official conference proceedings.",
+    description: "Official publication of conference proceedings.",
   },
 ];
