@@ -1,4 +1,5 @@
 export interface ImportantDate {
+  id?: string;
   event: string;
   date: string;
   description?: string;
@@ -7,28 +8,45 @@ export interface ImportantDate {
 
 export const importantDates: ImportantDate[] = [
   {
+    id: "registration-opens",
+    event: "Registration Opens",
+    date: "15th June 2026",
+    description: "Online registration opens for presenters, participants, and students.",
+  },
+  {
+    id: "abstract-submission-deadline",
     event: "Abstract Submission Deadline",
-    date: "June 30, 2026",
-    description: "Deadline for submitting paper abstracts",
+    date: "31st August 2026",
+    description: "Deadline for paper abstract submission.",
   },
   {
+    id: "notification-of-acceptance",
     event: "Notification of Acceptance",
-    date: "July 31, 2026",
-    description: "Notification sent to authors regarding paper acceptance",
+    date: "15th September 2026",
+    description: "Notification issued to authors regarding abstract acceptance.",
   },
   {
-    event: "Full Paper Submission",
-    date: "August 31, 2026",
-    description: "Camera-ready full paper submission deadline",
-  },
-  {
+    id: "early-bird-deadline",
     event: "Early Bird Registration Deadline",
-    date: "August 15, 2026",
-    description: "Discounted registration rate deadline",
+    date: "30th September 2026",
+    description: "Discounted registration rates end.",
   },
   {
-    event: "Conference Dates",
-    date: "October 15 - 17, 2026",
-    description: "Main conference event days",
+    id: "closing-date-registration",
+    event: "Closing Date of Registration",
+    date: "31st October 2026",
+    description: "Final deadline for all conference participant registrations.",
+  },
+  {
+    id: "post-conference-proceedings",
+    event: "Post-Conference Proceedings Submission",
+    date: "15th December 2026",
+    description: "Camera-ready full manuscript submission deadline for proceedings.",
+  },
+  {
+    id: "proceedings-publication",
+    event: "Proceedings Publication",
+    date: "31st January 2027",
+    description: "Publication date of official conference proceedings.",
   },
 ];
