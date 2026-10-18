@@ -105,7 +105,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                <a href={`tel:${contactInfo.phone}`} className="hover:text-accent transition-colors">
+                <a href={`tel:${contactInfo.phone.replace(/[^+\d]/g, "")}`} className="hover:text-accent transition-colors">
                   {contactInfo.phone}
                 </a>
               </li>

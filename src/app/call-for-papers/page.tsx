@@ -10,18 +10,20 @@ export default function CallForPapersPage() {
         title="Call for Papers"
         subtitle="Submit your original research papers and presentations to AMCWU 2026."
       />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {subthemes.map((theme) => (
-          <Card key={theme.id} className="space-y-3">
-            <Badge variant="accent">{theme.title}</Badge>
-            <p className="text-sm text-muted-foreground">{theme.description}</p>
-            <ul className="text-xs text-muted-foreground list-disc list-inside space-y-1">
-              {theme.topics.map((t, idx) => (
-                <li key={idx}>{t}</li>
-              ))}
-            </ul>
-          </Card>
-        ))}
+      <div id="submission" className="scroll-mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {subthemes.map((theme) => (
+            <Card key={theme.id} className="space-y-3">
+              <Badge variant="accent">{theme.title}</Badge>
+              <p className="text-sm text-muted-foreground">{theme.description}</p>
+              <ul className="text-xs text-muted-foreground list-disc list-inside space-y-1">
+                {theme.topics.map((t, idx) => (
+                  <li key={idx}>{t}</li>
+                ))}
+              </ul>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );
