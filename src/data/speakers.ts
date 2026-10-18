@@ -15,6 +15,7 @@ export interface CommitteeMember {
   title: string;
   role: string;
   institution?: string;
+  phone?: string;
 }
 
 export interface SpeakersData {
@@ -45,11 +46,12 @@ export const keynoteSpeakers: KeynoteSpeaker[] = [
 
 export const organizingCommittee: CommitteeMember[] = [
   {
-    id: "general-chair",
-    name: "General Chair",
-    title: "General Chair",
-    role: "General Chair",
+    id: "conference-chairman",
+    name: "Prof Kingsley Ukaoha",
+    title: "Prof Kingsley Ukaoha",
+    role: "Conference Chairman",
     institution: "Wigwe University",
+    phone: "+234 802 877 9315",
   },
   {
     id: "chair-loc",
@@ -57,13 +59,15 @@ export const organizingCommittee: CommitteeMember[] = [
     title: "Dr. Jacob Sesugh Angahar",
     role: "Chairman LOC",
     institution: "Wigwe University",
+    phone: "+234-7063841324",
   },
   {
     id: "co-chair-loc",
     name: "Dr. Nnaji Kennady",
     title: "Dr. Nnaji Kennady",
-    role: "Co-Chair / Secretary LOC",
+    role: "Secretary LOC",
     institution: "Wigwe University",
+    phone: "+234-8068292927",
   },
 ];
 

@@ -11,6 +11,7 @@ export interface ContactInfoData {
   secretariat: string;
   address: string;
   phone: string;
+  conferenceChairman: ContactPerson;
   locChairman: ContactPerson;
   locSecretary: ContactPerson;
   officialEmail: string;
@@ -30,6 +31,11 @@ export const contactInfo: ContactInfoData = {
   secretariat: "AMCWU 2026 Local Organizing Committee Secretariat",
   address: "Wigwe University, Isiokpo, Rivers State, Nigeria",
   phone: "+234-7063841324",
+  conferenceChairman: {
+    name: "Prof Kingsley Ukaoha",
+    role: "Conference Chairman",
+    phone: "+234 802 877 9315",
+  },
   locChairman: {
     name: "Dr. Jacob Sesugh Angahar",
     role: "Chairman, Local Organizing Committee (LOC)",
