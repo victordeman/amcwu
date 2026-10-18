@@ -1,18 +1,76 @@
-export interface Speaker {
+export interface KeynoteSpeaker {
   id: string;
   name: string;
+  title: string;
   role: string;
   institution: string;
+  bio: string;
   topic?: string;
   image?: string;
 }
 
-export const speakers: Speaker[] = [
+export interface CommitteeMember {
+  id: string;
+  name: string;
+  title: string;
+  role: string;
+  institution?: string;
+}
+
+export interface SpeakersData {
+  keynoteSpeakers: KeynoteSpeaker[];
+  organizingCommittee: CommitteeMember[];
+}
+
+export const keynoteSpeakers: KeynoteSpeaker[] = [
   {
     id: "keynote-1",
-    name: "Keynote Speakers",
-    role: "To Be Announced",
-    institution: "AMCWU 2026 Committee",
-    topic: "Detailed announcements regarding keynote speakers will follow.",
+    name: "Prof. Abubakar Sani Sambo",
+    title: "Prof. Abubakar Sani Sambo, FAS, FNSE",
+    role: "Keynote Speaker",
+    institution: "Usmanu Danfodiyo University, Sokoto & Former Director-General, Energy Commission of Nigeria",
+    bio: "Prof. Abubakar Sani Sambo is a renowned Nigerian professor of Mechanical Engineering, scholar, and pioneer in renewable energy research and energy policy implementation in Africa. He served as Director-General and Chief Executive Officer of the Energy Commission of Nigeria (ECN) and Vice-Chancellor of Abubakar Tafawa Balewa University, Bauchi.",
+    topic: "Emerging Technologies and Sustainable Energy Transition in Africa: Policy, Infrastructure, and Innovation",
+  },
+  {
+    id: "keynote-2",
+    name: "Prof. Mosto Onuoha",
+    title: "Prof. Mosto Onuoha, FAS",
+    role: "Keynote Speaker",
+    institution: "University of Nigeria, Nsukka & Former President, Nigerian Academy of Science",
+    bio: "Prof. Mosto Onuoha is an eminent Nigerian geophysicist, Emeritus Professor, and former President of the Nigerian Academy of Science (NAS). He has published extensively on energy resource exploration, environmental geophysics, and sustainable resource management across Sub-Saharan Africa.",
+    topic: "Geospatial Innovations and Green Economy Transition: Harnessing Natural Resources Safely in Developing Nations",
   },
 ];
+
+export const organizingCommittee: CommitteeMember[] = [
+  {
+    id: "general-chair",
+    name: "General Chair",
+    title: "General Chair",
+    role: "General Chair",
+    institution: "Wigwe University",
+  },
+  {
+    id: "chair-loc",
+    name: "Dr. Jacob Sesugh Angahar",
+    title: "Dr. Jacob Sesugh Angahar",
+    role: "Chairman LOC",
+    institution: "Wigwe University",
+  },
+  {
+    id: "co-chair-loc",
+    name: "Dr. Nnaji Kennady",
+    title: "Dr. Nnaji Kennady",
+    role: "Co-Chair / Secretary LOC",
+    institution: "Wigwe University",
+  },
+];
+
+export const speakersData: SpeakersData = {
+  keynoteSpeakers,
+  organizingCommittee,
+};
+
+// Backwards compatibility export
+export const speakers = keynoteSpeakers;

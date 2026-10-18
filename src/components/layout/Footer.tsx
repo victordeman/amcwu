@@ -12,11 +12,11 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2 font-bold text-lg">
               <GraduationCap className="h-6 w-6 text-accent" />
               <span className="tracking-tight font-extrabold text-foreground">
-                {conferenceDetails.title}
+                {conferenceDetails.shortTitle}
               </span>
             </Link>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              {conferenceDetails.fullName}
+              {conferenceDetails.theme}
             </p>
           </div>
 
@@ -43,22 +43,22 @@ export function Footer() {
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Mail className="h-3.5 w-3.5 text-accent shrink-0" />
-                <span>{contactInfo.email}</span>
+                <span>{contactInfo.officialEmail}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-3.5 w-3.5 text-accent shrink-0" />
-                <span>{contactInfo.phone}</span>
+                <span>{contactInfo.locChairman.phone}</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-3.5 w-3.5 text-accent shrink-0" />
-                <span>{contactInfo.address}</span>
+                <span>{contactInfo.venueAddress.institution}, {contactInfo.venueAddress.location}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border/50 pt-6 text-center text-xs text-muted-foreground">
-          <p>© {conferenceDetails.year} {conferenceDetails.title}. All rights reserved.</p>
+          <p>© {conferenceDetails.year} {conferenceDetails.shortTitle}. All rights reserved.</p>
         </div>
       </div>
     </footer>
