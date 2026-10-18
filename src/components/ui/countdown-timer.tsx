@@ -20,7 +20,7 @@ function useIsClient() {
   );
 }
 
-export function CountdownTimer({ targetDate = "2026-11-18T09:00:00" }: { targetDate?: string }) {
+export function CountdownTimer({ targetDate = "2026-11-18T09:00:00+01:00" }: { targetDate?: string }) {
   const isClient = useIsClient();
   const [timeLeft, setTimeLeft] = React.useState<TimeLeft>({
     days: 0,

@@ -33,7 +33,7 @@ export default function Home() {
   const abstractSubmissionFormUrl = "https://forms.office.com/r/g8BtqsZQwF";
 
   const fadeIn = {
-    initial: { opacity: 0, y: 15 },
+    initial: false,
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.4 },
   };
@@ -75,7 +75,7 @@ export default function Home() {
 
           {/* Countdown Timer */}
           <div className="mb-8">
-            <CountdownTimer targetDate="2026-11-18T09:00:00" />
+            <CountdownTimer targetDate="2026-11-18T09:00:00+01:00" />
           </div>
 
           {/* Key Badges: Date + Venue */}

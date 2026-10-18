@@ -30,6 +30,14 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
+
+    // Trigger user's mailto client so inquiry details are dispatched directly to the official email
+    const mailtoSubject = encodeURIComponent(`[AMCWU 2026 Inquiry] ${formData.subject}`);
+    const mailtoBody = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nCategory: ${formData.subject}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:${contactInfo.officialEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
     setFormSubmitted(true);
   };
 
