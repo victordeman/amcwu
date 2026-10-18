@@ -58,6 +58,14 @@ export default function SpeakersPage() {
               {member.institution && (
                 <p className="text-xs text-muted-foreground font-medium">{member.institution}</p>
               )}
+              {member.phone && (
+                <a
+                  href={`tel:${member.phone.replace(/[^+\d]/g, "")}`}
+                  className="text-xs text-accent font-medium hover:underline block pt-1"
+                >
+                  {member.phone}
+                </a>
+              )}
             </Card>
           ))}
         </div>

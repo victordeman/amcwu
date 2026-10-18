@@ -65,6 +65,14 @@ export default function AboutPage() {
               {member.institution && (
                 <p className="text-xs sm:text-sm text-muted-foreground">{member.institution}</p>
               )}
+              {member.phone && (
+                <a
+                  href={`tel:${member.phone.replace(/[^+\d]/g, "")}`}
+                  className="text-xs text-accent font-medium hover:underline block"
+                >
+                  {member.phone}
+                </a>
+              )}
             </Card>
           ))}
         </div>

@@ -193,13 +193,31 @@ export default function Home() {
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 Wigwe University, located in Isiokpo, Rivers State, Nigeria, is dedicated to nurturing fearless leaders, promoting world-class multidisciplinary research, and building sustainable solutions for Africa and beyond.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div className="flex items-start gap-3 p-3 rounded-lg bg-card border border-border/60">
+                  <Award className="h-5 w-5 text-gold shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-xs uppercase tracking-wide text-foreground">Conference Chairman</h4>
+                    <p className="text-sm font-semibold text-accent">{contactInfo.conferenceChairman.name}</p>
+                    <a
+                      href={`tel:${contactInfo.conferenceChairman.phone.replace(/[^+\d]/g, "")}`}
+                      className="text-xs text-muted-foreground hover:text-accent transition-colors block"
+                    >
+                      {contactInfo.conferenceChairman.phone}
+                    </a>
+                  </div>
+                </div>
                 <div className="flex items-start gap-3 p-3 rounded-lg bg-card border border-border/60">
                   <Award className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-xs uppercase tracking-wide text-foreground">Chairman LOC</h4>
                     <p className="text-sm font-semibold text-accent">{contactInfo.locChairman.name}</p>
-                    <p className="text-xs text-muted-foreground">{contactInfo.locChairman.phone}</p>
+                    <a
+                      href={`tel:${contactInfo.locChairman.phone.replace(/[^+\d]/g, "")}`}
+                      className="text-xs text-muted-foreground hover:text-accent transition-colors block"
+                    >
+                      {contactInfo.locChairman.phone}
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-3 rounded-lg bg-card border border-border/60">
@@ -207,7 +225,12 @@ export default function Home() {
                   <div>
                     <h4 className="font-bold text-xs uppercase tracking-wide text-foreground">Secretary LOC</h4>
                     <p className="text-sm font-semibold text-accent">{contactInfo.locSecretary.name}</p>
-                    <p className="text-xs text-muted-foreground">{contactInfo.locSecretary.phone}</p>
+                    <a
+                      href={`tel:${contactInfo.locSecretary.phone.replace(/[^+\d]/g, "")}`}
+                      className="text-xs text-muted-foreground hover:text-accent transition-colors block"
+                    >
+                      {contactInfo.locSecretary.phone}
+                    </a>
                   </div>
                 </div>
               </div>

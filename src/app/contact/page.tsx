@@ -61,7 +61,41 @@ export default function ContactPage() {
           <p className="text-xs text-muted-foreground">Direct contact points for conference leadership.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Conference Chairman Card */}
+          <Card className="p-6 space-y-4 border-l-4 border-l-gold border-border hover:shadow-md transition-shadow">
+            <div className="flex items-center justify-between">
+              <Badge variant="gold" className="text-xs">
+                {contactInfo.conferenceChairman.role}
+              </Badge>
+              <UserCheck className="h-5 w-5 text-gold shrink-0" />
+            </div>
+            <div>
+              <h4 className="text-xl font-bold text-foreground">{contactInfo.conferenceChairman.name}</h4>
+              <p className="text-xs text-accent font-medium mt-0.5">{contactInfo.conferenceChairman.role}</p>
+            </div>
+            <div className="space-y-2 pt-2 border-t border-border/60 text-xs sm:text-sm min-w-0">
+              <div className="flex items-center gap-2 text-muted-foreground min-w-0">
+                <Mail className="h-4 w-4 text-accent shrink-0" />
+                <a
+                  href={`mailto:${contactInfo.officialEmail}`}
+                  className="hover:text-accent font-medium transition-colors break-all min-w-0"
+                >
+                  {contactInfo.officialEmail}
+                </a>
+              </div>
+              <div className="flex items-center gap-2 text-muted-foreground min-w-0">
+                <Phone className="h-4 w-4 text-accent shrink-0" />
+                <a
+                  href={`tel:${contactInfo.conferenceChairman.phone.replace(/[^+\d]/g, "")}`}
+                  className="hover:text-accent font-medium transition-colors break-all min-w-0"
+                >
+                  {contactInfo.conferenceChairman.phone}
+                </a>
+              </div>
+            </div>
+          </Card>
+
           {/* Chairman LOC Card */}
           <Card className="p-6 space-y-4 border-l-4 border-l-gold border-border hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between">
@@ -74,21 +108,21 @@ export default function ContactPage() {
               <h4 className="text-xl font-bold text-foreground">{contactInfo.locChairman.name}</h4>
               <p className="text-xs text-accent font-medium mt-0.5">{contactInfo.locChairman.role}</p>
             </div>
-            <div className="space-y-2 pt-2 border-t border-border/60 text-xs sm:text-sm">
-              <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="space-y-2 pt-2 border-t border-border/60 text-xs sm:text-sm min-w-0">
+              <div className="flex items-center gap-2 text-muted-foreground min-w-0">
                 <Mail className="h-4 w-4 text-accent shrink-0" />
                 <a
                   href={`mailto:${contactInfo.locChairman.email || contactInfo.officialEmail}`}
-                  className="hover:text-accent font-medium transition-colors"
+                  className="hover:text-accent font-medium transition-colors break-all min-w-0"
                 >
                   {contactInfo.locChairman.email || contactInfo.officialEmail}
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
+              <div className="flex items-center gap-2 text-muted-foreground min-w-0">
                 <Phone className="h-4 w-4 text-accent shrink-0" />
                 <a
                   href={`tel:${contactInfo.locChairman.phone.replace(/[^+\d]/g, "")}`}
-                  className="hover:text-accent font-medium transition-colors"
+                  className="hover:text-accent font-medium transition-colors break-all min-w-0"
                 >
                   {contactInfo.locChairman.phone}
                 </a>
@@ -108,21 +142,21 @@ export default function ContactPage() {
               <h4 className="text-xl font-bold text-foreground">{contactInfo.locSecretary.name}</h4>
               <p className="text-xs text-accent font-medium mt-0.5">{contactInfo.locSecretary.role}</p>
             </div>
-            <div className="space-y-2 pt-2 border-t border-border/60 text-xs sm:text-sm">
-              <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="space-y-2 pt-2 border-t border-border/60 text-xs sm:text-sm min-w-0">
+              <div className="flex items-center gap-2 text-muted-foreground min-w-0">
                 <Mail className="h-4 w-4 text-accent shrink-0" />
                 <a
                   href={`mailto:${contactInfo.officialEmail}`}
-                  className="hover:text-accent font-medium transition-colors"
+                  className="hover:text-accent font-medium transition-colors break-all min-w-0"
                 >
                   {contactInfo.officialEmail}
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
+              <div className="flex items-center gap-2 text-muted-foreground min-w-0">
                 <Phone className="h-4 w-4 text-accent shrink-0" />
                 <a
                   href={`tel:${contactInfo.locSecretary.phone.replace(/[^+\d]/g, "")}`}
-                  className="hover:text-accent font-medium transition-colors"
+                  className="hover:text-accent font-medium transition-colors break-all min-w-0"
                 >
                   {contactInfo.locSecretary.phone}
                 </a>
