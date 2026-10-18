@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, Calendar, MapPin, Globe } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Badge } from "@/components/ui/Badge";
+import { ArrowRight, Calendar, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { Badge } from "@/components/ui/badge";
 import { conferenceDetails } from "@/data/conference";
 import { subthemes } from "@/data/subthemes";
 import { importantDates } from "@/data/dates";

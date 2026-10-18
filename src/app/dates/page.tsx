@@ -1,5 +1,5 @@
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Timeline } from "@/components/ui/Timeline";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { Timeline } from "@/components/ui/timeline";
 import { importantDates } from "@/data/dates";
 
 export default function DatesPage() {

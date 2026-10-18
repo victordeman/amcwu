@@ -18,7 +18,7 @@
     --secondary-foreground: #0d4f3c;
 
     --accent: #00a3a1;
-    --accent-foreground: #ffffff;
+    --accent-foreground: #042017;
 
     --gold: #f5a623;
     --gold-foreground: #0e2019;
@@ -60,9 +60,16 @@
     --input: #184234;
     --ring: #00b8b0;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), serif;
+  }
 }
 
 @theme {
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), Georgia, serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -102,4 +109,13 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.prose-max {
+  max-width: 65ch;
 }

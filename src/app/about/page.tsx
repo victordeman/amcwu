@@ -1,5 +1,5 @@
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { Card } from "@/components/ui/card";
 import { conferenceDetails } from "@/data/conference";
 
 export default function AboutPage() {
