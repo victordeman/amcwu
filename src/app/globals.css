@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #f8faf9;
+    --foreground: #0e2019;
+
+    --card: #ffffff;
+    --card-foreground: #0e2019;
+
+    --popover: #ffffff;
+    --popover-foreground: #0e2019;
+
+    --primary: #0a3d2c;
+    --primary-foreground: #ffffff;
+
+    --secondary: #e6f4f1;
+    --secondary-foreground: #0d4f3c;
+
+    --accent: #00a3a1;
+    --accent-foreground: #ffffff;
+
+    --gold: #f5a623;
+    --gold-foreground: #0e2019;
+
+    --muted: #f0f4f2;
+    --muted-foreground: #4a6358;
+
+    --border: #d2e0db;
+    --input: #d2e0db;
+    --ring: #00a3a1;
+  }
+
+  .dark {
+    --background: #061812;
+    --foreground: #f0f7f4;
+
+    --card: #0a241b;
+    --card-foreground: #f0f7f4;
+
+    --popover: #0a241b;
+    --popover-foreground: #f0f7f4;
+
+    --primary: #0d4f3c;
+    --primary-foreground: #ffffff;
+
+    --secondary: #12382b;
+    --secondary-foreground: #e6f4f1;
+
+    --accent: #00b8b0;
+    --accent-foreground: #061812;
+
+    --gold: #e8a317;
+    --gold-foreground: #061812;
+
+    --muted: #0d2e23;
+    --muted-foreground: #8aa89c;
+
+    --border: #184234;
+    --input: #184234;
+    --ring: #00b8b0;
+  }
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-forest-dark: #0a3d2c;
+  --color-forest-medium: #0d4f3c;
+  --color-teal-accent: #00a3a1;
+  --color-teal-bright: #00b8b0;
+  --color-gold-warm: #f5a623;
+  --color-gold-amber: #e8a317;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
