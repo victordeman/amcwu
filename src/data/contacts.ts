@@ -43,7 +43,7 @@ export const contactInfo: ContactInfoData = {
   },
   officialEmail: "africanconference@wigweuniversity.edu.ng",
   universityWebsite: "https://wigweuniversity.edu.ng",
-  eventsPageUrl: "https://wigweuniversity.edu.ng/events",
+  eventsPageUrl: "https://www.wigweuniversity.edu.ng/category/events/",
   venueAddress: {
     auditorium: "Main Auditorium",
     institution: "Wigwe University",

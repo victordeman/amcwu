@@ -3,23 +3,25 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { subthemes } from "@/data/subthemes";
 import { importantDates } from "@/data/dates";
-import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import { ExternalLink, FileText, Calendar, CheckCircle } from "lucide-react";
 
 export default function CallForPapersPage() {
-  const submissionDates = importantDates.filter(
-    (d) =>
-      d.id === "abstract-submission-deadline" ||
-      d.id === "notification-of-acceptance" ||
-      d.id === "post-conference-proceedings" ||
-      d.id === "proceedings-publication"
-  ).map((d) => ({
-    date: d.date,
-    title: d.event,
-    description: d.description,
-    isPassed: d.isPassed,
-  }));
+  const submissionDates = importantDates
+    .filter(
+      (d) =>
+        d.id === "abstract-submission-deadline" ||
+        d.id === "notification-of-acceptance" ||
+        d.id === "post-conference-proceedings" ||
+        d.id === "proceedings-publication"
+    )
+    .map((d) => ({
+      date: d.date,
+      title: d.event,
+      description: d.description,
+      isPassed: d.isPassed,
+    }));
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 max-w-6xl">
       {/* Intro Header */}
@@ -89,7 +91,7 @@ export default function CallForPapersPage() {
       </div>
 
       {/* Abstract Submission Guidelines & Form Link */}
-      <div id="submission-guidelines" className="scroll-mt-20 space-y-6">
+      <div id="submission" className="scroll-mt-20 space-y-6">
         <SectionHeading
           title="Abstract Submission Guidelines"
           subtitle="Instructions for authors preparing and submitting research abstracts."
