@@ -89,7 +89,7 @@ export default function CallForPapersPage() {
       </div>
 
       {/* Abstract Submission Guidelines & Form Link */}
-      <div id="submission-guidelines" className="scroll-mt-20 space-y-6">
+      <div id="submission" className="scroll-mt-20 space-y-6">
         <SectionHeading
           title="Abstract Submission Guidelines"
           subtitle="Instructions for authors preparing and submitting research abstracts."
