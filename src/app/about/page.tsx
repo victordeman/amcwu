@@ -2,21 +2,30 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { conferenceDetails } from "@/data/conference";
-import { MapPin, Globe, CheckCircle2, Building2 } from "lucide-react";
+import { organizingCommittee } from "@/data/speakers";
+import { MapPin, Globe, CheckCircle2, Building2, Users, UserCheck } from "lucide-react";
 
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10 max-w-5xl">
-      <SectionHeading
-        title="About AMCWU 2026"
-        subtitle={conferenceDetails.fullName}
-      />
+      <div className="space-y-4 text-center max-w-4xl mx-auto">
+        <Badge variant="accent" className="px-3 py-1 text-sm font-semibold">
+          Conference Theme & Overview
+        </Badge>
+        <SectionHeading
+          title="About AMCWU 2026"
+          subtitle={conferenceDetails.fullName}
+        />
+        <p className="text-lg font-medium text-accent italic max-w-3xl mx-auto">
+          &ldquo;{conferenceDetails.theme}&rdquo;
+        </p>
+      </div>
 
       <Card className="p-6 sm:p-8 space-y-4 leading-relaxed border-border">
-        <h3 className="text-xl font-bold text-foreground">Conference Overview</h3>
-        <p className="text-muted-foreground">{conferenceDetails.fullThemeStatement}</p>
+        <h3 className="text-xl font-bold text-foreground">Conference Statement &amp; Context</h3>
+        <p className="text-muted-foreground sm:text-base">{conferenceDetails.fullThemeStatement}</p>
         <p className="text-muted-foreground">
-          Our mission is to foster collaboration across multidisciplinary borders, empower researchers, and accelerate transformative technological solutions for green economy transition and sustainable development across Africa.
+          {conferenceDetails.description}
         </p>
       </Card>
 
@@ -28,6 +37,34 @@ export default function AboutPage() {
             <Card key={idx} className="p-5 flex items-start gap-3 border-border">
               <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{goal}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Organizing Committee Structure */}
+      <div className="space-y-6">
+        <SectionHeading
+          title="Organizing Committee Structure"
+          subtitle="Leadership and coordination for AMCWU 2026."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {organizingCommittee.map((member) => (
+            <Card key={member.id} className="p-6 text-center space-y-3 border-border hover:border-accent transition-colors">
+              <div className="w-12 h-12 rounded-full bg-accent/10 text-accent flex items-center justify-center mx-auto">
+                {member.role.includes("General") ? (
+                  <Users className="h-6 w-6" />
+                ) : (
+                  <UserCheck className="h-6 w-6" />
+                )}
+              </div>
+              <Badge variant="outline" className="mx-auto border-accent/40 text-accent font-semibold">
+                {member.role}
+              </Badge>
+              <h4 className="text-lg font-bold text-foreground">{member.title}</h4>
+              {member.institution && (
+                <p className="text-xs sm:text-sm text-muted-foreground">{member.institution}</p>
+              )}
             </Card>
           ))}
         </div>
