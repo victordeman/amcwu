@@ -16,13 +16,13 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: "AMCWU 2026 | Wigwe University Annual Multidisciplinary Conference",
+  title: "AMCWU 2026 | Wigwe University Multidisciplinary Conference",
   description:
-    "Official Website for AMCWU 2026 - Annual Multidisciplinary Conference on World Universities hosted by Wigwe University.",
+    "Official Website for AMCWU 2026 - 1st African Multidisciplinary Conference of Wigwe University on Harnessing Emerging Technologies for Green Economy Transition.",
   openGraph: {
-    title: "AMCWU 2026 | Wigwe University Annual Multidisciplinary Conference",
+    title: "AMCWU 2026 | Wigwe University Multidisciplinary Conference",
     description:
-      "Advancing Global Higher Education through Interdisciplinary Innovation. Join us at Wigwe University in 2026.",
+      "Harnessing Emerging Technologies for Green Economy Transition and Sustainable Development in Africa. Join us at Wigwe University on 18-19 November 2026.",
     url: "https://amcwu2026.wigweuniversity.edu.ng",
     siteName: "AMCWU 2026",
     locale: "en_US",
@@ -32,7 +32,40 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AMCWU 2026 | Wigwe University",
     description:
-      "Annual Multidisciplinary Conference on World Universities at Wigwe University.",
+      "1st African Multidisciplinary Conference of Wigwe University (AMCWU 2026).",
+  },
+};
+
+const jsonLdEvent = {
+  "@context": "https://schema.org",
+  "@type": "EducationEvent",
+  "name": "1st African Multidisciplinary Conference of Wigwe University (AMCWU 2026)",
+  "description":
+    "Harnessing Emerging Technologies for Green Economy Transition and Sustainable Development in Africa.",
+  "startDate": "2026-11-18T09:00:00+01:00",
+  "endDate": "2026-11-19T17:00:00+01:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+  "location": [
+    {
+      "@type": "Place",
+      "name": "Main Auditorium, Wigwe University",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Isiokpo",
+        "addressRegion": "Rivers State",
+        "addressCountry": "NG",
+      },
+    },
+    {
+      "@type": "VirtualLocation",
+      "url": "https://amcwu2026.wigweuniversity.edu.ng",
+    },
+  ],
+  "organizer": {
+    "@type": "EducationalOrganization",
+    "name": "Wigwe University",
+    "url": "https://wigweuniversity.edu.ng",
   },
 };
 
@@ -47,6 +80,12 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${cinzel.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdEvent) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <a
           href="#main-content"

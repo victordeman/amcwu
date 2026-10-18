@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   Calendar,
   MapPin,
@@ -18,6 +21,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { Timeline } from "@/components/ui/timeline";
+import { CountdownTimer } from "@/components/ui/countdown-timer";
 
 import { conferenceDetails } from "@/data/conference";
 import { importantDates } from "@/data/dates";
@@ -26,13 +30,24 @@ import { keynoteSpeakers } from "@/data/speakers";
 import { contactInfo } from "@/data/contacts";
 
 export default function Home() {
-  const abstractSubmissionFormUrl = "https://forms.office.com/r/AMCWU2026";
+  const abstractSubmissionFormUrl = "https://forms.office.com/r/g8BtqsZQwF";
+
+  const fadeIn = {
+    initial: { opacity: 0, y: 15 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.4 },
+  };
 
   return (
     <div className="flex flex-col gap-16 lg:gap-20 pb-16">
-      {/* 3.1 Full-width Hero Section */}
-      <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-primary/15 via-background to-background border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-5xl">
+      {/* 3.1 Full-width Hero Section with Countdown Timer */}
+      <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-primary/15 via-background to-background border-b border-border">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-5xl"
+        >
           {/* Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
             <Badge variant="gold" className="text-xs tracking-wider uppercase font-mono px-3 py-1">
@@ -56,6 +71,11 @@ export default function Home() {
             <blockquote className="text-lg sm:text-xl font-medium text-foreground italic leading-relaxed">
               &ldquo;{conferenceDetails.theme}&rdquo;
             </blockquote>
+          </div>
+
+          {/* Countdown Timer */}
+          <div className="mb-8">
+            <CountdownTimer targetDate="2026-11-18T09:00:00" />
           </div>
 
           {/* Key Badges: Date + Venue */}
@@ -82,26 +102,26 @@ export default function Home() {
               rel="noopener noreferrer"
               aria-label="Submit Abstract via Microsoft Form"
             >
-              <Button variant="gold" size="lg" className="font-bold flex items-center gap-2 shadow-md">
+              <Button variant="gold" size="lg" className="font-bold flex items-center gap-2 shadow-md hover:scale-105 transition-transform">
                 <FileText className="h-5 w-5" />
                 Submit Abstract
                 <ExternalLink className="h-4 w-4 opacity-80" />
               </Button>
             </a>
             <Link href="/registration">
-              <Button variant="primary" size="lg" className="font-bold flex items-center gap-2 shadow-md">
+              <Button variant="primary" size="lg" className="font-bold flex items-center gap-2 shadow-md hover:scale-105 transition-transform">
                 Register Now
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* 3.2 Quick Highlight Cards */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section {...fadeIn} className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <Card className="flex flex-col justify-between p-6 border-l-4 border-l-gold hover:shadow-md transition-shadow">
+          <Card className="flex flex-col justify-between p-6 border-l-4 border-l-gold hover:shadow-md transition-all duration-200 hover:-translate-y-1">
             <div>
               <div className="p-3 bg-gold/10 rounded-lg w-fit text-gold mb-4">
                 <Calendar className="h-6 w-6" />
@@ -119,7 +139,7 @@ export default function Home() {
             </Link>
           </Card>
 
-          <Card className="flex flex-col justify-between p-6 border-l-4 border-l-accent hover:shadow-md transition-shadow">
+          <Card className="flex flex-col justify-between p-6 border-l-4 border-l-accent hover:shadow-md transition-all duration-200 hover:-translate-y-1">
             <div>
               <div className="p-3 bg-accent/10 rounded-lg w-fit text-accent mb-4">
                 <Globe className="h-6 w-6" />
@@ -137,7 +157,7 @@ export default function Home() {
             </Link>
           </Card>
 
-          <Card className="flex flex-col justify-between p-6 border-l-4 border-l-primary hover:shadow-md transition-shadow">
+          <Card className="flex flex-col justify-between p-6 border-l-4 border-l-primary hover:shadow-md transition-all duration-200 hover:-translate-y-1">
             <div>
               <div className="p-3 bg-primary/10 rounded-lg w-fit text-primary mb-4">
                 <Building2 className="h-6 w-6" />
@@ -157,15 +177,15 @@ export default function Home() {
             </a>
           </Card>
         </div>
-      </section>
+      </motion.section>
 
       {/* 3.3 Short "Organized by" / Leadership Section */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section {...fadeIn} className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-muted/40 rounded-2xl p-8 sm:p-12 border border-border max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
               <Badge variant="accent" className="mb-2">
-                Host Institution & Leadership
+                Host Institution &amp; Leadership
               </Badge>
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
                 Organized by Wigwe University
@@ -201,7 +221,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-bold text-base text-foreground">14 Multidisciplinary Tracks</h3>
-                    <p className="text-xs text-muted-foreground">Ranging from AI and Renewable Energy to Green Finance & STEM Education.</p>
+                    <p className="text-xs text-muted-foreground">Ranging from AI and Renewable Energy to Green Finance &amp; STEM Education.</p>
                   </div>
                 </div>
               </Card>
@@ -220,10 +240,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 3.4 Keynote Speakers Preview */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section {...fadeIn} className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Keynote Speakers"
           subtitle="Distinguished African scholars and policy leaders addressing sustainable green transition."
@@ -231,7 +251,7 @@ export default function Home() {
         />
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {keynoteSpeakers.map((speaker) => (
-            <Card key={speaker.id} className="p-6 flex flex-col justify-between space-y-4 hover:shadow-lg transition-shadow border-border">
+            <Card key={speaker.id} className="p-6 flex flex-col justify-between space-y-4 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border-border">
               <div className="space-y-3">
                 <Badge variant="gold" className="w-fit text-[11px]">
                   {speaker.role}
@@ -252,14 +272,14 @@ export default function Home() {
         <div className="mt-8 text-center">
           <Link href="/speakers">
             <Button variant="outline" size="sm" className="inline-flex items-center gap-1.5 font-semibold">
-              View Keynotes & Committee <ArrowRight className="h-4 w-4" />
+              View Keynotes &amp; Committee <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>
         </div>
-      </section>
+      </motion.section>
 
       {/* 3.5 Important Dates Timeline Preview */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section {...fadeIn} className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-4 space-y-4">
             <Badge variant="gold">Timeline Preview</Badge>
@@ -286,10 +306,10 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 3.6 Registration Fee Summary Table */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section {...fadeIn} className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Registration Fees"
           subtitle="Clear and accessible fee tiers for local and international presenters, participants, and students."
@@ -323,7 +343,7 @@ export default function Home() {
           <div className="bg-muted/30 p-5 rounded-xl border border-border space-y-3">
             <h4 className="font-bold text-xs uppercase tracking-wider text-foreground flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-accent" />
-              Registration Notes & Instructions
+              Registration Notes &amp; Instructions
             </h4>
             <ul className="text-xs text-muted-foreground space-y-1.5 list-disc list-inside">
               {feeNotes.map((note, idx) => (
@@ -339,7 +359,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

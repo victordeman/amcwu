@@ -1,0 +1,16 @@
+
+> amcwu@0.1.0 dev
+> next dev
+
+▲ Next.js 16.4.2 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 592ms
+✓ Running next.config.ts took 52ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+○ Compiling / ...
+ HEAD / 200 in 918ms (next.js: 319ms, application-code: 599ms)
+ GET / 200 in 129ms (next.js: 2ms, application-code: 126ms)
+ GET /contact 200 in 225ms (next.js: 15ms, application-code: 210ms)
